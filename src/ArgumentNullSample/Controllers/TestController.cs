@@ -14,10 +14,12 @@ namespace ArgumentNullSample.Controllers
         }
 
         [HttpGet]
-        public IActionResult GetBusinesses()
+        public object GetBusinesses()
         {
             var result = _testRepository.GetBusinesses();
-            return Ok(result);
+            // this won't return the real result because there
+            // self referencing loop detected for property 'business'
+            return result;
         }
     }
 }

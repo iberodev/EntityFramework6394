@@ -1,7 +1,8 @@
 # EntityFramework6394
 
 This is a Sample project created with ASP.NET Core 1.0.0 and EF Core 1.0.0
-to show the issue with [the filtering problem] (https://github.com/aspnet/EntityFramework/issues/6394)
+to show the issue with [the argument null problem] (https://github.com/aspnet/EntityFramework/issues/6394)
+but unfortunately it cannot reproduce the issue.
 
 # Instructions to reproduce
 * Clone this repository 
@@ -26,5 +27,5 @@ dotnet ef database update
 * Trigger the sample by sending a GET request to:
 
 ```
-GET localhost: http://localhost:57092/api/test should return a list but it crashes
+GET localhost: http://localhost:57092/api/test should return a list
 ```
