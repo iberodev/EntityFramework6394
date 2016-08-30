@@ -19,6 +19,7 @@ namespace ArgumentNullSample.Repositories
         {
             var businesses = _context.Businesses
                 .Include(b => b.UserBusinesses).ThenInclude(ub => ub.AppAccesses)
+                .Include(b => b.UserBusinesses).ThenInclude(ub => ub.GroupMemberships)
                 .ToList();
             return businesses;
         }

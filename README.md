@@ -8,16 +8,21 @@ to show the issue with [the filtering problem] (https://github.com/aspnet/Entity
 ```
 git clone https://github.com/iberodev/EntityFramework6394.git
 ```
+* Create an empty database in MSSQLLocalDB called Db6394 
+
 * Restore all the dependencies
 ```
 cd EntityFramework6394
 dotnet restore
-```
-* Create the MSSQLLocalDB database by running the following
+``
+
+* Create the MSSQLLocalDB database tables by running the following at the project level
 ```
 dotnet ef database update
 ```
-* Run the application. The database will automatically be seeded with sample data.
+* Execute the script seedDatabase.sql to add test data
+
+* Run the application.
 * Trigger the sample by sending a GET request to:
 
 ```

@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Metadata;
+using System.IO;
+using Microsoft.AspNetCore.Hosting.Internal;
 
 namespace ArgumentNullSample.Migrations
 {

@@ -9,6 +9,7 @@ using ArgumentNullSample.SqlServer;
 using ArgumentNullSample.Repositories;
 using ArgumentNullSample.Model;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using System.IO;
 
 namespace ArgumentNullSample
 {
@@ -52,22 +53,18 @@ namespace ArgumentNullSample
                 {
                     options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
                 });
-
-            services.AddTransient<SampleContextSeeder>();
+            
             services.AddScoped<ITestRepository, TestRepository>();
         }
 
 
-        public void Configure(IApplicationBuilder app, ILoggerFactory loggerFactory, SampleContextSeeder seeder)
+        public void Configure(IApplicationBuilder app, ILoggerFactory loggerFactory)
         {
             loggerFactory.AddDebug(LogLevel.Debug);
 
             app.UseIdentity(); //ASP.NET Identity (adds cookie authentication)
 
             app.UseMvcWithDefaultRoute();
-
-            //Seed Database
-            seeder.EnsureSeedData();
         }
 
         private void ConfigureApplicationSettings()
