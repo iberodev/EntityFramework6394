@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
 namespace ArgumentNullSample.SqlServer
 {
-    public class SampleContext : DbContext
+    public class SampleContext : IdentityDbContext<User>
     {
         public SampleContext(DbContextOptions<SampleContext> options) : base(options)
         {
